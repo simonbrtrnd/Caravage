@@ -1,0 +1,13 @@
+{
+  "name": "Caravage",
+  "api": "1.0.0",
+  "id": "1059851135811973410",
+  "main": "dist/code.js",
+  "ui": "dist/ui.html",
+  "relaunchButtons": [
+    {"command": "relaunch", "name": "Relaunch Caravage", "multipleSelection": true}
+  ],
+  "editorType": [
+    "figma"
+  ]
+}

@@ -1,0 +1,505 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@100&display=swap");
+
+/* Global */
+body{
+    overflow: hidden;
+    user-select: none;
+}
+
+.hide{
+    display: none !important;
+    visibility: hidden !important;
+}
+
+.button-large {
+    text-align: center;
+    justify-content: center;
+}
+
+.icon-button{
+    cursor: default;
+}
+
+select {
+    display: flex;
+    align-items: center;
+    border: 1px solid transparent;
+    width: 100%;
+    height: 30px;
+    margin: 1px 0 1px 0;
+    font-size: var(--font-size-small);
+    font-weight: bold;
+    padding: 0px 0px 0px 4px;
+    overflow-y: hidden;
+    border-radius: var(--border-radius-small);
+    color:var(--figma-color-text);
+    background-color: var(--figma-color-bg);
+    padding-right: var(--size-xxxsmall);
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+  
+select:hover {
+    border-color: var(--figma-color-border);
+}
+
+select:focus {
+    border: 1px solid var(--figma-color-border-selected);
+    outline: 1px solid var(--figma-color-border-selected);
+    outline-offset: -2px;
+}
+
+select:disabled:hover {
+    justify-content: flex-start;
+    border-color: transparent;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+select::-ms-expand {
+    display: none;
+}
+
+.input--with-actions{
+    display: flex;
+    flex-direction: row;
+}
+
+/* Main */
+main{
+    display: flex;
+    flex-direction: column;
+}
+
+/* Tabs */
+#tabs{
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border-bottom: 1px solid var(--figma-color-border);
+    padding: 0px 8px;
+    box-sizing: border-box;
+    min-height: 40px;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    align-items: center;
+}
+
+.tab-content{
+    overflow-y: scroll;
+    border-right: 1px solid var(--figma-color-border);
+}
+
+#tabs .tab-button{
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    box-sizing: border-box;
+    padding: 4px 8px;
+    background-color: transparent;
+    color: var(--figma-color-text-secondary);
+    font-weight: var(--font-weight-medium);
+}
+
+#tabs .tab-button .icon{
+    opacity: 0.5;
+}
+
+#tabs .tab-button .type{
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    justify-content: space-between;
+}
+
+#tabs .tab-button .type:after{
+    content: attr(title);
+    height: 0;
+    visibility: hidden;
+    font-weight: var(--font-weight-bold);
+    color: var(--figma-color-text);
+}
+
+#tabs .tab-button:hover .type, #tabs .tab-button.selected .type{
+    font-weight: var(--font-weight-medium);
+    color: var(--figma-color-text);
+}
+
+#tabs .tab-button:hover .icon, #tabs .tab-button.selected .icon{
+    opacity: 1;
+}
+
+
+#all-tab-content{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+/* Section */
+.section{
+    display: flex;
+    box-sizing: border-box;
+    flex: 1;
+    flex-direction: column;
+    padding: var(--size-xxsmall) var(--size-xsmall);
+    gap: 4px;
+    color: var(--figma-color-text);
+}
+
+.section-title{
+    justify-content: space-between;
+    display: flex;
+    padding: 0;
+}
+
+/* Preview */
+#preview{
+    height: 96px;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid var(--figma-color-border);
+    border-radius:3px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#preview .icon-button{
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+#preview-text{
+    position: relative;
+    font-family: "Montserrat",Arial, Helvetica, sans-serif;
+    color: var(--figma-color-text);
+    font-weight: var(--font-weight-medium);
+    font-size:var(--font-size-small);
+    text-overflow: ellipsis;
+
+}
+
+#preview-background{
+    width: 100%;
+    height: 100%;
+    position:absolute;
+}
+
+/* Property */
+.property{
+    display: flex;
+    gap: var(--size-xxsmall);
+    justify-content: space-between;
+    border-top: 1px solid var(--figma-color-border);
+    min-height: 40px;
+    box-sizing: border-box;
+    padding: var(--size-xxxsmall) 0;
+    align-items: center;
+    flex-direction: row;
+}
+
+.property:first-child{
+    border-top: none;
+}
+
+.property-label{
+    display: flex;
+    flex-wrap: nowrap;
+    gap:var(--size-xxxsmall);
+    white-space: nowrap;
+    user-select: none;
+}
+
+.property-value {
+    user-select: none;
+    flex-grow: 1;
+    max-width: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    text-align: right;
+    gap:var(--size-xxxsmall);
+    flex-wrap: wrap;
+}
+
+.property-value input{
+    text-align: right;
+    font-weight: bold;
+    font-size: var(--font-size-small);
+}
+
+/* Swatch */
+.swatch{
+    width: var(--size-xsmall);
+    height: var(--size-xsmall);
+    border-radius:var(--border-radius-small);
+    background: transparent;
+    border: 1px solid var(--figma-color-border);
+}
+
+#swap-colors{
+    background-color: var(--figma-color-bg);
+}
+
+/* Usage */
+#usage{
+    background-color: rgba(255, 235, 0, .2);
+    background-color: #FFFBCC;
+    color: var(--black8);
+    border-radius: var(--border-radius-med);
+    padding:12px;
+    margin: var(--size-xxsmall) 0;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+#usage li{
+  list-style: none;
+  position: relative;
+  padding-left: 12px;
+}
+
+#usage li:before{
+    content:"•";
+    position: absolute;
+    left: 0;
+}
+
+/* Result */
+.result{
+    user-select: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    text-align: right;
+    flex-wrap: wrap;
+    width: auto;
+    flex-grow: 0;
+    padding: var(--size-xxxsmall) var(--size-xxsmall);
+    border-radius: var(--border-radius-large);
+    color:var(--black8);
+}
+
+.result.pass {
+    background: #D1F3E5;
+    background: rgba(27, 196,125,0.4);
+}
+
+.result.fail {
+    background-color: #FCDAD3;
+    background: rgba(242, 72,34,0.4);
+}
+
+/* Scan */
+
+#scan-results{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 12px 0;
+}
+
+.scan-results-container{
+    display: flex;
+    flex-direction: column;
+}
+
+.scan-results-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 8px;
+    cursor: pointer;
+}
+
+.scan-results-header .icon{
+    transition: all ease-in-out .15s;
+    cursor: pointer;
+    transform: rotate(-90deg);
+}
+
+.scan-results-container.active .icon{
+    transform: rotate(90deg);
+}
+
+.scan-results-container:not(.active) .scan-results-list{
+    display: none;
+}
+
+.scan-results-list{
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+
+.scan-result{
+    background-color: var(--figma-color-bg);
+    padding: 8px;
+    border:1px solid var(--figma-color-border);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: var(--border-radius-med);
+    gap: 8px;
+    cursor: pointer;
+}
+
+.scan-result.active{
+    border:1px solid var(--figma-color-border-selected);
+}
+
+.scan-result .type{
+   white-space: nowrap;
+   overflow: hidden; 
+   text-overflow: ellipsis;
+}
+
+#scan-empty-state{
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+    gap: 8px;
+    height: 80%;
+}
+
+#scan-empty-state button{
+    margin-top: 16px;
+}
+
+
+
+/* Content */
+.content .scrollable{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: calc(100% - 56px);
+    overflow-y: scroll;
+}
+
+/* Modal */
+.modal{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 100%;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal.section{
+    padding: var(--size-xxsmall);
+}
+.modal::before{ /*Overlay*/
+    content: "";
+    width:100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    left: 0;
+}
+
+.modal .section{
+    padding: var(--size-xxsmall) 12px;
+}
+
+.modal .content{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: var(--size-xxsmall);
+    overflow: hidden;
+    background-color: var(--figma-color-bg);
+    border-radius: var(--border-radius-large);
+    z-index: 999;
+}
+
+.modal .content .close-button{
+   align-self: flex-end;
+}
+
+.modal .modal-header{
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+    padding: 8px 8px 8px 12px;
+    box-shadow: inset 0px -1px 0px 0px var(--figma-color-border);
+}
+
+#about ul{
+    padding-left:var(--size-small);
+}
+#about p, #about li{
+    margin-bottom: var(--size-xxxsmall);
+
+    font-weight: var(--font-weight-medium);
+    font-size: var(--font-size-small);
+}
+
+/* Loader */
+.loader{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--figma-color-bg);
+    gap: 32px;
+}
+
+#scan-loader-preview{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 120px;
+    height: 120px;
+    border-radius: 60px;
+    border: 1px solid var(--figma-color-border);
+    overflow: hidden;
+    font-family: "Montserrat",Arial, Helvetica, sans-serif;
+    transition: all ease-in-out 0.1s;
+}
+
+#scan-loader-progress{
+    color: var(--figma-color-text-secondary);
+    position: absolute;
+    bottom: 24px;
+}
+
+
+.figma-light .icon-themed {
+    filter: invert(0%) sepia(56%) saturate(25%) hue-rotate(137deg) brightness(105%) contrast(60%);
+}
+
+.figma-dark .icon-themed  {
+    filter: invert(99%) sepia(2%) saturate(5%) hue-rotate(55deg) brightness(104%) contrast(98%);
+}

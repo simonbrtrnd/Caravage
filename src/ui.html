@@ -1,0 +1,104 @@
+<body>
+    <main id="main">
+        <div id="tabs">
+            <button id="selection-tab-button" class="tab-button selected" page-id="selection">
+                <div class="text type" title="Selection">Selection</div>
+            </button>
+            <button id="scan-tab-button" class="tab-button" page-id="scan">
+                <div class="text type" title="Scan">Scan</div>
+                <div id="scan-refresh" class="icon icon--swap icon-themed hide"></div>
+            </button>
+        </div>
+
+        <div id="all-tab-content">
+
+            <div id="scan" class="section tab-content hide">
+                <div id="scan-empty-state">
+                    <div class="type">
+                        <span class="type--bold" id="scan-texts">XXXX texts</span> inside the selection. 
+                        <br>Scan will take arround <span id="scan-time" class="type--bold">XX:XX min</span>
+                    </div>
+                    <button id="start-scan" class='button button--secondary button-large'>Scan</button>
+                </div>
+                <div id="scan-results" class="hide"></div>
+            </div>
+
+            <div id="selection" class="section tab-content">
+                <div id ="preview">
+                    <div id ="preview-background"></div>
+                    <div id ="preview-text">Select a text</div>
+                    <div id="swap-colors" class="icon-button hide" title="swap colors">
+                        <div class="icon icon--reverse icon-themed"></div>
+                    </div>
+                </div>
+                <div class="properties">
+                    <div class="property">
+                        <div class="property-label type">Text</div>
+                        <div id="text-palette" class="property-value type type--bold"></div>
+                    </div>
+                    <div class="property">
+                        <div class="property-label type">Background</div>
+                        <div id="background-palette" class="property-value type type--bold"></div>
+                    </div>
+                    <div class="property">
+                        <div class="property-label type">Font size (px)</div>
+                        <div  class="property-value type type--bold">
+                            <div class="input">
+                                <input id="font-size" type="number" class="input__field">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="property">
+                        <div class="property-label type--small ">Font weight</div>
+                        <div class="property-value type type--bold type--small">
+                            <select name="font-weight" id="font-weight" class="hide" dir="rtl">
+                                <option value="100">100</option>
+                                <option value="200">200</option>
+                                <option value="300">300</option>
+                                <option value="400">400</option>
+                                <option value="500">500</option>
+                                <option value="600">600</option>
+                                <option value="700">700</option>
+                                <option value="800">800</option>
+                                <option value="900">900</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div id="open-contrast-modal" class="property">
+                        <div class="property-label type--small ">Contrast <span>(?)</span></div>
+                        <div id="apca" class="property-value type type--bold type--small" title="selection / min"></div>
+                    </div>
+                    <div id="result" class="property">
+                        <div class="property-label type--small ">Result</div>
+                    </div>
+                    <div id="usage" class="type type--small"></div>
+                </div>
+            </div>
+    </div>
+    </main>
+
+    <div id="contrast-modal" class="section modal hide">
+        <div class="content">
+            <div class="section modal-header">
+                <div class="type type--bold">Contrast</div>
+                <div id= "close-contrast-modal" class="icon-button"><div class="icon icon--close icon-themed"></div></div>
+            </div>
+            <div id="about">
+                <div class="section">
+                    <p>The contrast field has two values: </p> 
+                    <ul>
+                        <li>Contrast value of selected text and background.</li>
+                        <li>Minimum contrast value provided by the <a id="lookUpTableLink" target="_blank" href="https://www.myndex.com/APCA/" title="Look up table">APCA contrast look up table</a>.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="scan-loader" class="loader hide">
+        <div id="scan-loader-preview">
+            <div>Aa</div>
+        </div>
+        <div id="scan-loader-progress" class="type type--bold">100%</div>
+    </div>
+</body>
