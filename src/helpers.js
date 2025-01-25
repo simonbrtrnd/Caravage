@@ -70,9 +70,8 @@ export function getWeight(style)
     {
 
         let s = style.toLowerCase();
-        let specifics = [" ", "-","_", "italic", /[0-9]/g];
+        let specifics = [" ", "-","_", "italic", "display", "semicondensed", "extracondensed" , "condensed", "(", ")", "+", /[0-9]/g];
         for (let specific of specifics) s = s.replaceAll(specific, "");
-
         switch (s)
         {
             case "thin": return 100;

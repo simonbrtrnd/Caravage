@@ -1,9 +1,11 @@
 {
   "name": "Caravage",
   "api": "1.0.0",
-  "id": "1059851135811973410",
+  "id": "1413184718185819161",
   "main": "dist/code.js",
   "ui": "dist/ui.html",
+  "documentAccess": "dynamic-page",
+  "networkAccess": { "allowedDomains": ["https://rsms.me"] },
   "relaunchButtons": [
     {"command": "relaunch", "name": "Relaunch Caravage", "multipleSelection": true}
   ],
