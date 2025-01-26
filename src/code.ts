@@ -35,7 +35,7 @@ async function start()
     {
         if (msg.type === "notification") figma.notify(msg.notification);
         if (msg.type === "resize-ui") resizeUI(msg.width, msg.height);
-        if (msg.type === "select-node") selectNode(msg.id);
+        if (msg.type === "select-node") await selectNode(msg.id);
         if (msg.type === "get-total-texts") figma.ui.postMessage({type:"set-total-texts" ,total: getTotalTexts()}); 
         if (msg.type == "check") check(allNode.textArray,true);
         if (msg.type === "scan")
@@ -297,13 +297,12 @@ async function start()
     //#endregion
 
     //#region SELECT
-    function selectNode(id)
-    {
+
+    async function selectNode(id: string) {
         let nodes = [];
-        let node = figma.getNodeById(id);
-        if(node != undefined)
-        {
-            nodes.push(figma.getNodeById(id))
+        let node = await figma.getNodeByIdAsync(id); 
+        if (node != undefined) {
+            nodes.push(node);
             figma.currentPage.selection = nodes;
             figma.viewport.scrollAndZoomIntoView(figma.currentPage.selection);
         }
